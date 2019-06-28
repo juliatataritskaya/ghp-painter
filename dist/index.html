@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-signin-client_id" content="372896007723-aetgqi5o1hjj5qqntpt7gvj5t4qbr06h.apps.googleusercontent.com">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="index.js" defer></script>
+    <title>Piskel clone</title>
+</head>
+<body>
+<div id="landing">
+    <header>
+        <div class="header">
+            <h1>Piskel clone</h1>
+        </div>
+    </header>
+    <div class="landingContent">
+        <div class="description">
+            <h1>Piskel is a free online editor for animated sprites & pixel art</h1>
+            <p>Create animations in your browser.
+                Try an example, use Google sign in to access your gallery or simply create a new sprite.</p>
+            <div data-longtitle="true" data-width='220' data-height="52" id="signIn" class="g-signin2" data-onsuccess="onSignIn"></div>
+            <button id="createSpriteBtn">Create sprite</button>
+        </div>
+        <img src="img/frontImg.png" alt="">
+    </div>
+    <footer>
+        <div>Developer: Vlad Tataritsky</div>
+        <ul>
+            <li><a target="_blank" href="https://github.com/Kektor44">GitHub</a></li>
+            <li><a target="_blank" href="https://vk.com/vladtataritskii">VK</a></li>
+            <li><a target="_blank" href="mailto:tataritskii@gmail.com">GMail</a></li>
+            <li><a target="_blank" href="mailto:tataritskii@bk.ru">Mail</a></li>
+        </ul>
+    </footer>
+</div>
+<div id="app">
+    <header>
+        <div class="header">
+            <h1>Piskel clone</h1>
+        </div>
+    </header>
+    <main>
+        <div class="leftSide">
+            <div class="tools">
+                <div id="penSize">
+                    <p>Pen size(px)</p>
+                    <input class="penSizeBnt" type="radio" name="penSize" value="1" checked>
+                    <input class="penSizeBnt" type="radio" name="penSize" value="2">
+                    <input class="penSizeBnt" type="radio" name="penSize" value="3">
+                    <input class="penSizeBnt" type="radio" name="penSize" value="4">
+                </div>
+                <div id="pen" class="tool" data-title="Pen tool (P)"><img src="img/iconfinder_081_Pen_183209.png" alt=""></div>
+                <div id='mirrorPen' class="tool" data-title="Vertical mirror pen (V)"><img src="img/iconfinder_mirror_298828.png" alt=""></div>
+                <div id="paintAll" class="tool" data-title="Paint all pixels of the same color (B)"><img src="img/iconfinder_Paint_1021026.png" alt=""></div>
+                <div id="eraserTool" class="tool" data-title="Eraser tool (E)"><img src="img/iconfinder_Eraser_1021016.png" alt=""></div>
+                <div id="colorPickerTool" class="tool" data-title="Color picker (O)"><img
+                        src="img/iconfinder_eyedropper_color_picker_pipette_dropper_sample_3994358.png" alt=""></div>
+                <div id='stroke' class="tool" data-title="Stroke tool (L)"><img src="img/iconfinder_minus_214643.png" alt=""></div>
+                <div class="tool" data-title="Circle tool (C)"><img src="img/iconfinder_check-circle-outline-blank_326565.png" alt=""></div>
+                <div id="rectangle" class="tool" data-title="Rectangle tool (Q)"><img src="img/iconfinder_button_shape_rectangle_352896.png" alt="">
+                </div>
+                <div id="rotate" class="tool" data-title="Rotate tool (T)"><img src="img/iconfinder_button_rotate_352901.png" alt=""></div>
+                <div id='mirrorCanvas' class="tool" data-title="Mirror canvas tool (M)"><img src="img/4595786-128.png" alt=""></div>
+                <div id='lighten' class="tool" data-title="Lighten tool (U)"><img src="img/iconfinder_Vector-icons_81_1041639.png" alt=""></div>
+                <div class="tool"><img src="img/iconfinder_Vector-icons_81_1041639.png" alt=""></div>
+                <input id="primaryColor" type="color" value="rgba(1,150,190,1)">
+                <input id="secondaryColor" type="color" value="#ffffff">
+                <button id="changeColorButton">&#8635;</button>
+                <button id="shortcuts">shortcuts</button>
+            </div>
+
+            <div id="frames">
+                <div class="frame"></div>
+                <button id="addFrame"><p class="plus">+</p>
+                    <p class="buttonText">Add new frame</p></button>
+            </div>
+        </div>
+        <div class="canvasEnv">
+            <div id="canvasBlock">
+                <canvas id="bgCanvas" width="700" height="700"></canvas>
+                <canvas id="canvas" class="canvas" width="700" height="700"></canvas>
+            </div>
+        </div>
+        <div class="rightSide">
+            <div id="animationFrame">
+                <canvas id="animateCanvas" width="230" height="230"></canvas>
+
+            </div>
+            <button id="fullScreen">Full screen mode</button>
+
+            <div class="inputBlock">
+                <p id="fpsValue">10 FPS</p>
+                <input id="input" type="range" min="1" max="24" value="10">
+            </div>
+            <div class="layersBlock">
+                <h3>layers</h3>
+                <div class="layersTools">
+                    <button id="addLayer">+</button>
+                    <button id="removeLayer">X</button>
+                </div>
+                <div class="layers">
+                    <ul id="layersList">
+                        <li>layer 1</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="coordinates">
+                <input id="fieldSizeInput" type="number" value="32" min="4" max="128">
+                <button id="changeSizeBtn">Change size</button>
+                <p id="coords">[32x32]</p>
+            </div>
+        </div>
+    </main>
+    <div id="shortcutsBlock">
+        <div class="shorkcutsHeader">
+            <h2>Keyboard shortcuts</h2>
+            <button id="closePopup">X</button>
+        </div>
+        <div id="shortcutsContent">
+            <ul>
+                <li>'P' - Pen tool</li>
+                <li>'V' - Vertical mirror pen tool</li>
+                <li>'B' - Paint bucket tool</li>
+                <li>'E' - Eraser tool</li>
+                <li>'X' - Swap primary/secondary colors</li>
+                <li>'N' - Create new empty frame</li>
+                <li>'R' - Remove frame</li>
+                <li>'D' - Dublicate frame</li>
+                <li>'T' - Rotate canvas tool</li>
+                <li>'M' - Mirror canvas tool</li>
+                <li>'K' - Open an opened popup</li>
+                <li>'ESC' - Close an opened popup</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="app.bundle.js"></script></body>
+</html>

@@ -1,0 +1,494 @@
+body {
+    width:100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #232323;
+    font-family: Arial;
+    user-select: none;
+}
+.smallScreen{
+    width: 100%;
+    height: 100%;
+    background-color: #232323;
+    color: white;
+    font-size: 300%;
+    font-weight: bold;
+    text-align: center;
+}
+
+#landing{
+    width: 100vw;
+    height: 100vh;
+    background-color: #232323;
+}
+#landing button{
+    font-size: 20px;
+    font-weight: bold;
+    background-color: yellow;
+    border: none;
+    border-radius: 3px;
+    padding: 15px;
+    transition:  background-color 0.3s, color 0.3s;
+    cursor: pointer;
+    position: absolute;
+    left: 270px;
+    top: 350px;
+}
+#landing button:hover{
+    background-color: black;
+    color: yellow;
+}
+.g-signin2{
+    position: absolute;
+    top: 350px;
+    left: 40px;
+}
+.landingContent{
+    width: 100%;
+    height: 400px;
+    background-color: #464749;
+    margin-top: 40px;
+}
+#landing .description{
+    width: 42%;
+    height: 100%;
+    margin-left: 40px;
+    float: left;
+}
+#landing .description h1{
+    font-size: 43px;
+    margin-top: 40px;
+    color: white;
+}
+.landingContent img{
+    width: 46%;
+    height: 100%;
+    margin-left: 40px;
+}
+#landing .description p{
+    font-size: 30px;
+    color: white;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    text-align: center;
+}
+footer div{
+    color: white;
+    font-weight: bold;
+    margin-top: 5px;
+}
+footer li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 35px;
+}
+footer li a{
+    font-weight: bold;
+    color: lightgrey;
+    text-decoration: none;
+}
+#app{
+    display: none;
+}
+#shortcuts{
+    background-color: yellow;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+#shortcutsBlock{
+    width: 65%;
+    height: 70%;
+    margin: -42% auto;
+    background-color: yellow;
+    display: none;
+}
+.shorkcutsHeader{
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    color: yellow;
+}
+#shortcutsBlock h2{
+    width: 70%;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+#shortcutsBlock #closePopup{
+    position: absolute;
+    right: 0;
+    color: yellow;
+    margin-top: -42px;
+    font-size: 20px;
+    background-color: transparent;
+    border: 0;
+    font-weight: bold;
+
+}
+#shortcutsBlock li{
+    font-weight: bold;
+    font-size: 24px;
+    list-style: none;
+    color: black;
+}
+.header {
+    width: 100%;
+    height:35px;
+    color: white;
+    background-color: #2f3031;
+    position: absolute;
+    top: 0;
+}
+.header h1{
+    margin-top: 0;
+    margin-left: 20px;
+}
+main{
+    width:100%;
+    height:100vh;
+}
+.leftSide{
+    float: left;
+    width: 17%;
+    height: 100%;
+}
+
+.tools{
+    width: 120px;
+    height: 85%;
+    position: absolute;
+    bottom: 0;
+    left: 3px;
+    display: inline-block;
+}
+.tool img{
+    width: 40px;
+    height: 40px;
+    filter: invert(1);
+    pointer-events: none;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+#penSize{
+    width: 96%;
+    height: 40px;
+}
+input[type=radio]{
+    position: relative;
+    bottom: 15px;
+    width: 16px;
+    height: 16px;
+}
+#penSize p{
+    text-align: center;
+    color: white;
+
+}
+.tool{
+    width: 49px;
+    height: 49px;
+    display: inline-block;
+    border: 3px solid darkslategrey;
+    background-color: darkslategrey;
+    margin-left: 1px;
+    margin-top: 5px;
+    transition: border 0.2s;
+}
+.tool:hover{
+    border: 3px solid #232323;
+}
+[data-title]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.2s;
+    visibility: visible;
+}
+[data-title]:after {
+    content: attr(data-title);
+    background-color: black;
+    color: white;
+    position: absolute;
+    font-size: 16px;
+    top: 10px;
+    left: 55px;
+    white-space: nowrap;
+    box-shadow: 1px 1px 3px #222222;
+    opacity: 0;
+    border: 1px solid white;
+    padding: 5px;
+    z-index: 99999;
+    visibility: hidden;
+}
+[data-title] {
+    position: relative;
+}
+#primaryColor{
+    border: 0 solid grey;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 430px;
+    left: 10px;
+    z-index: 11;
+}
+#secondaryColor{
+    border: 0 solid grey;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 40px;
+    top: 460px;
+    z-index: 10;
+}
+#changeColorButton{
+    background-color: transparent;
+    border: 0;
+    position: absolute;
+    top: 485px;
+    left: 10px;
+    font-weight: bold;
+    font-size: 22px;
+    color: lightgrey;
+}
+#shortcuts {
+    width: 70px;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+}
+#frames{
+    width: 135px;
+    height: 98vh;
+    display: inline-block;
+    position: absolute;
+    left: 122px;
+    top: 36px;
+}
+
+
+#frames::-webkit-scrollbar
+{
+    width: 12px;
+}
+
+#frames::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: lightgrey;
+}
+
+.frame{
+    width: 115px;
+    height: 115px;
+    border: 3px solid darkslategrey;
+    margin-top: 5px;
+    border-radius: 5px;
+    transition: border 0.3s;
+    background-color: white;
+}
+.numberFrame{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: yellow;
+    border-radius: 0 0 4px 0;
+    text-align: center;
+    font-weight: bold;
+    z-index: 10;
+}
+.removeFrame{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: yellow;
+    border-radius: 0 0 0 4px;
+    text-align: center;
+    font-weight: bold;
+    left: 100px;
+    z-index: 10;
+}
+#addFrame{
+    width: 110px;
+    height: 60px;
+    border: 3px solid lightgrey;
+    border-radius: 5px;
+    color: lightgrey;
+    font-size: 17px;
+    margin-top: 5px;
+    margin-left: 5px;
+    background-color: transparent;
+    transition: border 0.3s;
+}
+#addFrame:hover{
+    border: 3px solid gold;
+}
+.plus{
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    float: left;
+    margin-top: 3px;
+    padding-right: 5px;
+}
+.buttonText{
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 15px;
+}
+.canvasEnv{
+    width: 66%;
+    height: 100%;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.canvas {
+    width: 700px;
+    height: 700px;
+    border: 3px solid white;
+    display: block;
+    margin: 40px auto;
+    position: absolute;
+    left: 25%;
+    z-index: 1;
+    image-rendering: pixelated;
+}
+#canvas{
+    border: 3px solid yellow;
+
+}
+#bgCanvas{
+    width: 700px;
+    height: 700px;
+    display: block;
+    border: 3px solid blue;
+    margin: 40px auto;
+    position: absolute;
+    left: 25%;
+    background-color: white;
+    z-index: -1;
+}
+
+.rightSide{
+    float: right;
+    width: 17%;
+    height: 100%;
+    display: inline-block;
+}
+.rightSide h3{
+    color:white;
+    margin-left: 10px;
+    margin-top: 3px;
+}
+#animationFrame{
+    width: 230px;
+    height: 230px;
+    margin-top: 40px;
+    margin-left: 6px;
+    background-color: white;
+    border: 3px solid yellow;
+}
+#fullScreen{
+    margin-left: 10px;
+    border-radius: 3px;
+    border: none;
+    font-weight: bold;
+}
+.layersBlock{
+    width: 230px;
+    margin-left: 6px;
+    margin-top: 30px;
+    border: 2px solid lightgrey;
+
+}
+.layersTools{
+    width: 100%;
+    height: 30px;
+    background-color: pink;
+    margin-top: -15px;
+}
+.layersTools button{
+    font-size: 20px;
+    font-weight: bold;
+}
+.inputBlock {
+    width: 88%;
+    height: 40px;
+    margin-top: 0;
+    margin-left: 6px;
+}
+.inputBlock p{
+    float: left;
+    width: 30%;
+    margin-left: 10px;
+    color: lightgrey;
+}
+.inputBlock input{
+    margin-top: 15px;
+}
+#coordinates{
+    width: 17%;
+    height: 10%;
+    position: absolute;
+    bottom: 0;
+}
+#coords{
+    margin-left: 5px;
+    font-weight: bold;
+    color: white;
+}
+#fieldSizeInput {
+    width: 18%;
+    border: 0;
+    border-radius: 3px;
+    padding-left: 25px;
+    font-size: 15px;
+    margin-left: 10%;
+}
+#changeSizeBtn {
+    font-size: 15px;
+    background-color: yellow;
+    border-radius: 3px;
+    border: 0;
+    font-weight: bold;
+}
+.layersTools{
+    background-color: dimgrey;
+}
+.layersTools button{
+    height: 30px;
+    width: 40px;
+    background-color: lightgrey;
+    border: none;
+
+}
+#layersList li{
+    list-style: none;
+    margin-left: -30px;
+    margin-top: -10px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    color: white;
+}
+.canvInFrame{
+    width: 115px;
+    height: 115px;
+}
+.animEl{
+    width: 230px;
+    height: 230px;
+}
+.newCanvas{
+    pointer-events: none;
+    image-rendering: pixelated;
+}
+
